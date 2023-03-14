@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calorie Counter</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>Calorie Counter</h1> 
+       <div class="flex-container">
+            <ul class="row">
+                <li class="title">Food</li>
+                <li class="title">Calories</li>
+            </ul>
+            <% food.forEach( el => { %>
+            <ul class="row" data-id="<%=el._id%>">
+                  <li class="food"> <%= el.food%></li>
+                  <li class="calories"> <%= el.calories%></li>
+            </ul>
+            <% }) %>
+
+          <% let sum = 0; %>
+          <% calories.forEach( el => { %> 
+            <% sum += el.calories %>
+          <% }) %>
+        
+          <h2 class="forum">Total Calories: <%= sum %> </h2>
+
+
+    <!--<h2><%= user.userName %> has <%= left %> things left to do.</h2>-->
+    <span class="forum">
+    <form action="/calories/createCalories" method='POST'>
+        <p>Enter food or beverage</p>
+        <input type="text" placeholder="Enter Food or Beverage" name='foodItem'>
+        <p>Enter the amount of calories</p>
+        <input type="text" placeholder="Enter the amount of calories" name='calorieItem'>
+        <input type="submit">
+    </form>
+    </span>
+
+    <a href="/logout">Logout</a>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

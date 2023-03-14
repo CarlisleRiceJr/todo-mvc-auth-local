@@ -1,8 +1,12 @@
 const mongoose = require('mongoose')
 
-const TodoSchema = new mongoose.Schema({
-  todo: {
+const CalorieSchema = new mongoose.Schema({
+  food: {
     type: String,
+    required: true,
+  },
+  calories: {
+    type: Number,
     required: true,
   },
   completed: {
@@ -15,4 +19,4 @@ const TodoSchema = new mongoose.Schema({
   }
 })
 
-module.exports = mongoose.model('Todo', TodoSchema)
+module.exports = mongoose.model('Calorie', CalorieSchema)

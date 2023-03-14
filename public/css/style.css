@@ -1,5 +1,10 @@
+body {
+    font-family: 'futura'; 
+}
+
 h1{
-    color: red;
+    color: rgb(168, 39, 39);
+    padding-left:40px;
 }
 .completed{
     text-decoration: line-through;
@@ -8,3 +13,38 @@ h1{
 .not{
     text-decoration: underline;
 }
+
+* {
+    box-sizing: border-box;
+  }
+  
+  div.flex-container{
+    display: flex;
+    flex-direction: column; /* turn children ul elements into stacked rows */
+}
+ 
+ 
+div.flex-container ul.row{
+    list-style: none;
+    display: flex; /* turn children li elements into flex children */
+    flex: 1;
+    flex-wrap: wrap;
+}
+ 
+div.flex-container ul.row li{
+    background: #0fb1c0;
+    flex: 1;
+    padding: 10px;
+    border-bottom: 1px solid gray;
+}
+ 
+.title {
+    font-weight: bold;
+}
+ 
+.forum {
+    padding-left:40px;
+}
+
+ 
+ 
